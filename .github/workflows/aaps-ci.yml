@@ -271,7 +271,7 @@ jobs:
           mv wear/build/outputs/apk/${{ env.VARIANT_FLAVOR }}/${{ env.VARIANT_TYPE }}/*.apk aaps-wear-${{ env.VERSION }}${{ env.VERSION_SUFFIX }}.apk
 
       - name: Archive APK as Artifact
-  uses: actions/upload-artifact@v4
-  with:
-    name: AAPS-${{ github.event.inputs.variant }}
-    path: app/build/outputs/apk/**/**.apk
+        uses: actions/upload-artifact@v4
+        with:
+          name: AAPS-${{ github.event.inputs.buildVariant }}
+          path: aaps-*.apk
